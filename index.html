@@ -1,0 +1,52 @@
+<html ng-app = 'mySign'>
+<head>
+<title>OnionScope</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="./stylesheets/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+
+<script src="/javascripts/app.js"></script>
+</head>
+<body>
+<div class="fullscreen-bg">
+<video loop muted autoplay poster="/images/space.jpg" id="fullscreen-bg__video">
+	<source src="/images/space.mp4" type="video/mp4">
+</video>
+</div>
+
+<div id="left-panel">
+	<div id="first-div">HOW TO FIND YOUR SIGN</div>
+	<div class="in-panel"><img src="/images/aries.png">Aires Dates: March 21 to April 19</div>
+	<div class="in-panel"><img src="/images/taurus.png">Taurus Dates: April 20 to May 20</div>
+	<div class="in-panel"><img src="/images/gemini.png">Gemini Dates: May 21 to June 20</div>
+	<div class="in-panel"><img src="/images/cancer.png">Cancer Dates: June 21 to July 22</div>
+	<div class="in-panel"><img src="/images/leo.png">Leo Dates: July 23 to August 22</div>
+	<div class="in-panel"><img src="/images/virgo.png">Virgo Dates: August 23 to September 22</div>
+	<div class="in-panel"><img src="/images/libra.png">Libra Dates: September 23 to October 22</div>
+	<div class="in-panel"><img src="/images/scorpio.png">Scorpio Dates: October 23 to November 21</div>
+	<div class="in-panel"><img src="/images/sagittarius.png">Sagittarius Dates: November 22 to December 21</div>
+	<div class="in-panel"><img src="/images/capricorn.png">Capricorn Dates: December 22 to January 19</div>
+	<div class="in-panel"><img src="/images/aquarius.png">Aquarius Dates: January 20 to February 18</div>
+	<div class="in-panel"><img src="/images/pisces.png">Pisces Dates: February 19 to March 20</div>
+</div>
+<h1>Weekly Horoscope</h1>
+<div ng-controller="SubjectDropDownController">
+      <div class="dropdown">
+            <span> Choose Your Sign:</span><button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{selectedItem}}
+              <span class="caret"></span>
+        </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li ng-repeat="a in subjects"><a ng-click="dropboxitemselected(a)">{{a}}</a></li>
+            </ul>
+        </div>
+      </div>
+	  
+<p id="tiles">Prediction</p>
+<div id="prediction"><p id="tiles"></p></div>
+
+</body>
+</html>
